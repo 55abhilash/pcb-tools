@@ -27,14 +27,20 @@ from .ipc356 import IPCNetlist
 Hint = namedtuple('Hint', 'layer ext name regex content')
 
 hints = [
+    Hint(layer='drill',
+         ext=['xln', 'dri', 'exc', 'drd', 'txt'],
+         name=['board', 'drill'],
+         regex='',
+         content=[]
+         ),
     Hint(layer='top',
-         ext=['gtl', 'cmp', 'top', ],
+         ext=['gtl', 'cmp', 'top', 'gbr', 'mnt'],
          name=['art01', 'top', 'GTL', 'layer1', 'soldcom', 'comp', 'F.Cu', ],
          regex='',
          content=[]
          ),
     Hint(layer='bottom',
-         ext=['gbl', 'sld', 'bot', 'sol', 'bottom', ],
+         ext=['gbl', 'sld', 'bot', 'sol', 'bottom', 'gbr', 'mnb'],
          name=['art02', 'bottom', 'bot', 'GBL', 'layer2', 'soldsold', 'B.Cu', ],
          regex='',
          content=[]
